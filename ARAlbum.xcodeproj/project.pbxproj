@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD448F3D2067E1E900892455 /* ARCubeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD448F3C2067E1E900892455 /* ARCubeViewController.m */; };
 		CDC509F0205F5C3600A415C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC509EF205F5C3600A415C7 /* AppDelegate.m */; };
 		CDC509F2205F5C3600A415C7 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = CDC509F1205F5C3600A415C7 /* art.scnassets */; };
 		CDC509F5205F5C3600A415C7 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC509F4205F5C3600A415C7 /* MainViewController.m */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD448F3B2067E1E900892455 /* ARCubeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ARCubeViewController.h; sourceTree = "<group>"; };
+		CD448F3C2067E1E900892455 /* ARCubeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ARCubeViewController.m; sourceTree = "<group>"; };
 		CDC509EB205F5C3600A415C7 /* ARAlbum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARAlbum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDC509EE205F5C3600A415C7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CDC509EF205F5C3600A415C7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -39,6 +42,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD448F3A2067E1AB00892455 /* Cube */ = {
+			isa = PBXGroup;
+			children = (
+				CD448F3B2067E1E900892455 /* ARCubeViewController.h */,
+				CD448F3C2067E1E900892455 /* ARCubeViewController.m */,
+			);
+			path = Cube;
+			sourceTree = "<group>";
+		};
 		CDC509E2205F5C3600A415C7 = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +70,7 @@
 		CDC509ED205F5C3600A415C7 /* ARAlbum */ = {
 			isa = PBXGroup;
 			children = (
+				CD448F3A2067E1AB00892455 /* Cube */,
 				CDC509EE205F5C3600A415C7 /* AppDelegate.h */,
 				CDC509EF205F5C3600A415C7 /* AppDelegate.m */,
 				CDC509F1205F5C3600A415C7 /* art.scnassets */,
@@ -144,6 +157,7 @@
 			files = (
 				CDC509F5205F5C3600A415C7 /* MainViewController.m in Sources */,
 				CDC50A00205F5C3600A415C7 /* main.m in Sources */,
+				CD448F3D2067E1E900892455 /* ARCubeViewController.m in Sources */,
 				CDC509F0205F5C3600A415C7 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

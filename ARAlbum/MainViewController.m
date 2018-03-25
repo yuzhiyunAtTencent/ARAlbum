@@ -1,42 +1,50 @@
 //
-//  ViewController.m
+//  MainViewController.m
 //  ARAlbum
 //
 //  Created by 俞志云 on 2018/3/19.
 //  Copyright © 2018年 俞志云. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MainViewController.h"
 
-@interface ViewController () <ARSCNViewDelegate>
+@interface MainViewController () <ARSCNViewDelegate>
 
-@property (nonatomic, strong) IBOutlet ARSCNView *sceneView;
+@property (nonatomic, strong)  ARSCNView *sceneView;
 
 @end
 
     
-@implementation ViewController
+@implementation MainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    // Set the view's delegate
-    self.sceneView.delegate = self;
     
-    // Show statistics such as fps and timing information
-    self.sceneView.showsStatistics = YES;
+    self.sceneView = ({
+        ARSCNView *sceneView = [[ARSCNView alloc] initWithFrame:self.view.bounds];
+        // Set the view's delegate
+        sceneView.delegate = self;
+        
+        // Show statistics such as fps and timing information
+        sceneView.showsStatistics = YES;
+        
+        // Create a new scene scn格式文件是一个基于3D建模的文件，使用3DMax软件可以创建，这里系统有一个默认的3D飞机
+        SCNScene *scene = [SCNScene sceneNamed:@"art.scnassets/ship.scn"];
+        
+        // Set the scene to the view
+        sceneView.scene = scene;
+        
+        sceneView;
+    });
     
-    // Create a new scene
-    SCNScene *scene = [SCNScene sceneNamed:@"art.scnassets/ship.scn"];
+    [self.view addSubview:self.sceneView];
     
-    // Set the scene to the view
-    self.sceneView.scene = scene;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    // Create a session configuration
+    // Create a session configuration 主要负责传感器追踪手机的移动和旋转
     ARWorldTrackingConfiguration *configuration = [ARWorldTrackingConfiguration new];
 
     // Run the view's session

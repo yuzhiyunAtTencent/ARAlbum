@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MainViewController.h
 //  ARAlbum
 //
 //  Created by 俞志云 on 2018/3/19.
@@ -10,6 +10,6 @@
 #import <SceneKit/SceneKit.h>
 #import <ARKit/ARKit.h>
 
-@interface ViewController : UIViewController
+@interface MainViewController : UIViewController
 
 @end

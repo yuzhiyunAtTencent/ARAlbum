@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "MainViewController.h"
 #import "ARCubeViewController.h"
+#import "YUNMainViewController.h"
 
 @interface AppDelegate ()
 
@@ -21,7 +22,7 @@
     //设置窗口
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     //初始页面
-    UIViewController *mainVC = [[ARCubeViewController alloc] init];
+    UIViewController *mainVC = [[YUNMainViewController alloc] init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:mainVC];
     //是否隐藏导航栏
     nav.navigationBarHidden = YES;

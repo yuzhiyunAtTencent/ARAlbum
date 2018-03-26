@@ -1,5 +1,5 @@
 //
-//  YUNMainViewController.h
+//  YUNPhotoCell.h
 //  ARAlbum
 //
 //  Created by 俞志云 on 2018/3/26.
@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YUNMainViewController : UIViewController
+@interface YUNPhotoCell : UITableViewCell
+
++ (CGFloat)height;
+
+- (void)layoutWithData:(NSString *)item;
 
 @end

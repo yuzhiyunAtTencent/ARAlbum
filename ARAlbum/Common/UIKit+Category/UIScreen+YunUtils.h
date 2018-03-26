@@ -27,6 +27,7 @@
 #define IS_RETINA ([[UIScreen mainScreen] respondsToSelector:@selector(scale)] == YES && SCREEN_SCALE > 1.00f)
 #define IS_IPhoneX  ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
 
+
 @interface UIScreen (YunUtils)
 
 @property(nonatomic, readonly) CGRect qn_portraitBounds;

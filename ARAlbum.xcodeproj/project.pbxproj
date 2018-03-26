@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		CD448F3D2067E1E900892455 /* ARCubeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD448F3C2067E1E900892455 /* ARCubeViewController.m */; };
+		CD448F4A2068E12F00892455 /* YUNMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD448F492068E12F00892455 /* YUNMainViewController.m */; };
+		CD448F532068EC9800892455 /* YUNBasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD448F522068EC9800892455 /* YUNBasicViewController.m */; };
+		CD448F602068EF4100892455 /* UIScreen+YunUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CD448F5E2068EF4100892455 /* UIScreen+YunUtils.m */; };
 		CDC509F0205F5C3600A415C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC509EF205F5C3600A415C7 /* AppDelegate.m */; };
 		CDC509F2205F5C3600A415C7 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = CDC509F1205F5C3600A415C7 /* art.scnassets */; };
 		CDC509F5205F5C3600A415C7 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC509F4205F5C3600A415C7 /* MainViewController.m */; };
@@ -19,6 +22,16 @@
 /* Begin PBXFileReference section */
 		CD448F3B2067E1E900892455 /* ARCubeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ARCubeViewController.h; sourceTree = "<group>"; };
 		CD448F3C2067E1E900892455 /* ARCubeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ARCubeViewController.m; sourceTree = "<group>"; };
+		CD448F482068E12F00892455 /* YUNMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUNMainViewController.h; sourceTree = "<group>"; };
+		CD448F492068E12F00892455 /* YUNMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUNMainViewController.m; sourceTree = "<group>"; };
+		CD448F4B2068EB1800892455 /* YUNPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUNPrefixHeader.pch; sourceTree = "<group>"; };
+		CD448F512068EC9800892455 /* YUNBasicViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUNBasicViewController.h; sourceTree = "<group>"; };
+		CD448F522068EC9800892455 /* YUNBasicViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUNBasicViewController.m; sourceTree = "<group>"; };
+		CD448F5A2068EF4100892455 /* CommonMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonMacros.h; sourceTree = "<group>"; };
+		CD448F5C2068EF4100892455 /* UIKit+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIKit+Category.h"; sourceTree = "<group>"; };
+		CD448F5D2068EF4100892455 /* UIScreen+YunUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+YunUtils.h"; sourceTree = "<group>"; };
+		CD448F5E2068EF4100892455 /* UIScreen+YunUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+YunUtils.m"; sourceTree = "<group>"; };
+		CD448F5F2068EF4100892455 /* YUNDataGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YUNDataGlobal.h; sourceTree = "<group>"; };
 		CDC509EB205F5C3600A415C7 /* ARAlbum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARAlbum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDC509EE205F5C3600A415C7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CDC509EF205F5C3600A415C7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -51,9 +64,72 @@
 			path = Cube;
 			sourceTree = "<group>";
 		};
+		CD448F3E2068DA1000892455 /* Album */ = {
+			isa = PBXGroup;
+			children = (
+				CD448F472068DF5B00892455 /* ViewModel */,
+				CD448F462068DF5100892455 /* Controller */,
+				CD448F452068DF4A00892455 /* View */,
+			);
+			path = Album;
+			sourceTree = "<group>";
+		};
+		CD448F452068DF4A00892455 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CD448F462068DF5100892455 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CD448F482068E12F00892455 /* YUNMainViewController.h */,
+				CD448F492068E12F00892455 /* YUNMainViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CD448F472068DF5B00892455 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CD448F502068EC7A00892455 /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				CD448F512068EC9800892455 /* YUNBasicViewController.h */,
+				CD448F522068EC9800892455 /* YUNBasicViewController.m */,
+			);
+			path = Basic;
+			sourceTree = "<group>";
+		};
+		CD448F592068EF4100892455 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				CD448F5A2068EF4100892455 /* CommonMacros.h */,
+				CD448F5B2068EF4100892455 /* UIKit+Category */,
+				CD448F5F2068EF4100892455 /* YUNDataGlobal.h */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		CD448F5B2068EF4100892455 /* UIKit+Category */ = {
+			isa = PBXGroup;
+			children = (
+				CD448F5C2068EF4100892455 /* UIKit+Category.h */,
+				CD448F5D2068EF4100892455 /* UIScreen+YunUtils.h */,
+				CD448F5E2068EF4100892455 /* UIScreen+YunUtils.m */,
+			);
+			path = "UIKit+Category";
+			sourceTree = "<group>";
+		};
 		CDC509E2205F5C3600A415C7 = {
 			isa = PBXGroup;
 			children = (
+				CD448F4B2068EB1800892455 /* YUNPrefixHeader.pch */,
 				CDC509ED205F5C3600A415C7 /* ARAlbum */,
 				CDC509EC205F5C3600A415C7 /* Products */,
 			);
@@ -70,6 +146,9 @@
 		CDC509ED205F5C3600A415C7 /* ARAlbum */ = {
 			isa = PBXGroup;
 			children = (
+				CD448F592068EF4100892455 /* Common */,
+				CD448F502068EC7A00892455 /* Basic */,
+				CD448F3E2068DA1000892455 /* Album */,
 				CD448F3A2067E1AB00892455 /* Cube */,
 				CDC509EE205F5C3600A415C7 /* AppDelegate.h */,
 				CDC509EF205F5C3600A415C7 /* AppDelegate.m */,
@@ -156,8 +235,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDC509F5205F5C3600A415C7 /* MainViewController.m in Sources */,
+				CD448F4A2068E12F00892455 /* YUNMainViewController.m in Sources */,
 				CDC50A00205F5C3600A415C7 /* main.m in Sources */,
+				CD448F602068EF4100892455 /* UIScreen+YunUtils.m in Sources */,
 				CD448F3D2067E1E900892455 /* ARCubeViewController.m in Sources */,
+				CD448F532068EC9800892455 /* YUNBasicViewController.m in Sources */,
 				CDC509F0205F5C3600A415C7 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,6 +368,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F36KV5ER57;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/YUNPrefixHeader.pch";
 				INFOPLIST_FILE = ARAlbum/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuzhiyun.ARAlbum;
@@ -300,6 +384,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F36KV5ER57;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/YUNPrefixHeader.pch";
 				INFOPLIST_FILE = ARAlbum/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuzhiyun.ARAlbum;

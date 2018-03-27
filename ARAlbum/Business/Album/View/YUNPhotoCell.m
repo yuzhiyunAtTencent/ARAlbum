@@ -11,6 +11,10 @@
 @interface YUNPhotoCell()
 
 @property(nonatomic, strong) UIImageView *coverImageView;
+@property(nonatomic, strong) UIView *shadowBackgroundView;
+@property(nonatomic, strong) UILabel *titleLabel;
+@property(nonatomic, strong) UILabel *placeLabel;
+@property(nonatomic, strong) UILabel *dateLabel;
 
 @end
 
@@ -26,10 +30,10 @@
         self.backgroundColor = [UIColor clearColor];
         
         [self.contentView addSubview:self.coverImageView];
-//        [self.contentView addSubview:self.separatorLineImage];
-//        [self.contentView addSubview:self.titleLabel];
-//        [self.contentView addSubview:self.courseDurationLabel];
-//        [self.contentView addSubview:self.progressLabel];
+        [self.contentView addSubview:self.shadowBackgroundView];
+        [self.contentView addSubview:self.titleLabel];
+        [self.contentView addSubview:self.placeLabel];
+        [self.contentView addSubview:self.dateLabel];
     }
     return self;
 }
@@ -38,30 +42,27 @@
     [super layoutSubviews];
     
     const CGFloat kCoverImageViewLeadingSpace = 10;
-    const CGFloat kCoverImageViewTopSpace = 12;
+    const CGFloat kCoverImageViewTopSpace = 5;
+    const CGFloat kTitleLabelLeadingSpace = 20;
+    const CGFloat kTitleLabelTopSpace = 140;
+    const CGFloat kTitleLabelHeight = 20;
+    const CGFloat kPlaceLabelTopSpace = 10;
+    const CGFloat kPlaceLabelWidth = 150;
+    const CGFloat kPlaceLabelHeight = 10;
+    const CGFloat kDateLabelWidth = 80;
+    const CGFloat kDateLabelHeight = 12;
+    const CGFloat kDateLabelTrailingSpace = 10;
 
     self.coverImageView.frame = CGRectMake(SP_6P_x1_2(kCoverImageViewLeadingSpace), SP_6P_x1_2(kCoverImageViewTopSpace), SCREEN_WIDTH - 2 * SP_6P_x1_2(kCoverImageViewLeadingSpace), [YUNPhotoCell height] - 2 * SP_6P_x1_2(kCoverImageViewTopSpace));
-//    const CGFloat kTitleLabelLeadingSpace = 12;
-//    const CGFloat kTitleLabelTopSpace = 16;
-//    const CGFloat kTitleLabelHeight = 22;
-//    const CGFloat kCourseDurationLabelTopSpace = 5;
-//    const CGFloat kCourseDurationLabelHeight = 14;
-//    const CGFloat kProgressLabelHeight = 14;
-//    const CGFloat kProgressLabelTopSpace = 5;
-//    
-//    const CGFloat kLabelX = kTitleLabelLeadingSpace + kCoverImageViewWidth + kCoverImageViewLeadingSpace;
-//    const CGFloat kLabelWidth = SCREEN_WIDTH - kCoverImageViewLeadingSpace - kCoverImageViewWidth - kTitleLabelLeadingSpace;
-//    
-//    self.coverImageView.frame = CGRectMake(SP_6P_x1_2(kCoverImageViewLeadingSpace), SP_6P_x1_2(kCoverImageViewTopSpace), SP_6P_x1_2(kCoverImageViewWidth), SP_6P_x1_2(kCoverImageViewHeight));
-//    self.titleLabel.frame = CGRectMake(SP_6P_x1_2(kLabelX), SP_6P_x1_2(kTitleLabelTopSpace), SP_6P_x1_2(kLabelWidth), SP_6P_x1_2(kTitleLabelHeight));
-//    self.courseDurationLabel.frame = CGRectMake(SP_6P_x1_2(kLabelX), SP_6P_x1_2(kTitleLabelTopSpace + kTitleLabelHeight + kCourseDurationLabelTopSpace), SP_6P_x1_2(kLabelWidth), SP_6P_x1_2(kCourseDurationLabelHeight));
-//    self.progressLabel.frame = CGRectMake(SP_6P_x1_2(kLabelX), self.courseDurationLabel.qn_bottom + SP_6P_x1_2(kProgressLabelTopSpace), SP_6P_x1_2(kLabelWidth), SP_6P_x1_2(kProgressLabelHeight));
-//    self.separatorLineImage.frame = CGRectMake(SP_6P_x1_2(kQNCellInsets.left), 0, SCREEN_WIDTH - SP_6P_x1_2(kQNCellInsets.left + kQNCellInsets.right), 1);
-//    self.separatorLineImage.qn_bottom = self.qn_height;
-//    
-//    self.titleLabel.frame = CGRectIntegral(self.titleLabel.frame);
-//    self.courseDurationLabel.frame = CGRectIntegral(self.courseDurationLabel.frame);
-//    self.progressLabel.frame = CGRectIntegral(self.progressLabel.frame);
+    self.shadowBackgroundView.frame = self.coverImageView.frame;
+    self.titleLabel.frame = CGRectMake(SP_6P_x1_2(kTitleLabelLeadingSpace), SP_6P_x1_2(kTitleLabelTopSpace), SCREEN_WIDTH - 2 * SP_6P_x1_2(kTitleLabelLeadingSpace), SP_6P_x1_2(kTitleLabelHeight));
+    self.placeLabel.frame = CGRectMake(SP_6P_x1_2(kTitleLabelLeadingSpace), SP_6P_x1_2(kTitleLabelTopSpace + kPlaceLabelTopSpace + kTitleLabelHeight), SP_6P_x1_2(kPlaceLabelWidth), SP_6P_x1_2(kPlaceLabelHeight));
+    self.dateLabel.frame = CGRectMake(0, SP_6P_x1_2(kTitleLabelTopSpace + kPlaceLabelTopSpace + kTitleLabelHeight), SP_6P_x1_2(kDateLabelWidth), SP_6P_x1_2(kDateLabelHeight));
+    self.dateLabel.qn_right = SCREEN_WIDTH - SP_6P_x1_2(kDateLabelTrailingSpace);
+    
+    self.titleLabel.frame = CGRectIntegral(self.titleLabel.frame);
+    self.placeLabel.frame = CGRectIntegral(self.placeLabel.frame);
+    self.dateLabel.frame = CGRectIntegral(self.dateLabel.frame);
 }
 
 #pragma mark - Accessors
@@ -74,10 +75,47 @@
     return _coverImageView;
 }
 
+- (UIView *)shadowBackgroundView {
+    if (!_shadowBackgroundView) {
+        _shadowBackgroundView = [[UIView alloc] init];
+        _shadowBackgroundView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
+    }
+    return _shadowBackgroundView;
+}
+
+- (UILabel *)titleLabel {
+    if (!_titleLabel) {
+        _titleLabel = [[UILabel alloc] init];
+        _titleLabel.textColor = [UIColor whiteColor];
+        _titleLabel.font = [UIFont boldSystemFontOfSize:22];
+    }
+    return _titleLabel;
+}
+
+- (UILabel *)placeLabel {
+    if (!_placeLabel) {
+        _placeLabel = [[UILabel alloc] init];
+        _placeLabel.textColor = [UIColor whiteColor];
+    }
+    return _placeLabel;
+}
+
+- (UILabel *)dateLabel {
+    if (!_dateLabel) {
+        _dateLabel = [[UILabel alloc] init];
+        _dateLabel.textColor = [UIColor whiteColor];
+    }
+    return _dateLabel;
+}
+
+
 #pragma mark - Public Methods
 - (void)layoutWithData:(NSString *)item {
     NSString *imagePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:[NSString stringWithFormat:@"Image.bundle/%@", @"PhotoCover/c.jpg"]];
     self.coverImageView.image = [UIImage imageWithContentsOfFile:imagePath];
+    self.titleLabel.text = @"宝宝的2岁生日靓照";
+    self.placeLabel.text = @"北京华诚影楼";
+    self.dateLabel.text = @"2017.02.03";
 }
 
 @end

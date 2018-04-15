@@ -25,7 +25,7 @@
     UIViewController *mainVC = [[YUNMainViewController alloc] init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:mainVC];
     //是否隐藏导航栏
-    nav.navigationBarHidden = YES;
+//    nav.navigationBarHidden = YES;
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
     return YES;

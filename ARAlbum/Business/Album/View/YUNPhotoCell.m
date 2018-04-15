@@ -27,7 +27,7 @@
 #pragma mark - Override
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if( self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        self.backgroundColor = [UIColor clearColor];
+        self.backgroundColor = [UIColor whiteColor];
         
         [self.contentView addSubview:self.coverImageView];
         [self.contentView addSubview:self.shadowBackgroundView];
@@ -71,6 +71,8 @@
         _coverImageView = [[UIImageView alloc] init];
         _coverImageView.contentMode = UIViewContentModeScaleAspectFill;
         _coverImageView.clipsToBounds = YES;
+        _coverImageView.layer.cornerRadius = 15;
+        _coverImageView.layer.masksToBounds = YES;
     }
     return _coverImageView;
 }
@@ -79,6 +81,8 @@
     if (!_shadowBackgroundView) {
         _shadowBackgroundView = [[UIView alloc] init];
         _shadowBackgroundView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
+        _shadowBackgroundView.layer.cornerRadius = 15;
+        _shadowBackgroundView.layer.masksToBounds = YES;
     }
     return _shadowBackgroundView;
 }

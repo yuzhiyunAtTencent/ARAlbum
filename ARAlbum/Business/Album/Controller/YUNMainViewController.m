@@ -8,6 +8,7 @@
 
 #import "YUNMainViewController.h"
 #import "YUNPhotoCell.h"
+#import "MainViewController.h"
 
 @interface YUNMainViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -72,6 +73,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    MainViewController *mainVC = [[MainViewController alloc] init];
+    [self.navigationController pushViewController:mainVC animated:YES];
     
 //    CListItemType *item = [self.viewModel.listItems safeObjectAtIndex:indexPath.row];
 //    item.hasRead = YES;

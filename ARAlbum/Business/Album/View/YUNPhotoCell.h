@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YUNAlbumPhotoModel.h"
 
 @interface YUNPhotoCell : UITableViewCell
 
 + (CGFloat)height;
 
-- (void)layoutWithData:(NSString *)item;
+- (void)layoutWithData:(YUNAlbumPhotoModel *)item;
 
 @end

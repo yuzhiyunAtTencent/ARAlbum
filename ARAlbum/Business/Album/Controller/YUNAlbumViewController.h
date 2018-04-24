@@ -1,5 +1,5 @@
 //
-//  YUNMainViewController.h
+//  YUNAlbumViewController.h
 //  ARAlbum
 //
 //  Created by 俞志云 on 2018/3/26.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YUNMainViewController : YUNBasicViewController
+@interface YUNAlbumViewController : YUNBasicViewController
 
 @end

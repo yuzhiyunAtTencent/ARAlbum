@@ -1,28 +1,41 @@
 //
-//  YUNMainViewController.m
+//  YUNAlbumViewController.m
 //  ARAlbum
 //
 //  Created by 俞志云 on 2018/3/26.
 //  Copyright © 2018年 俞志云. All rights reserved.
 //
 
-#import "YUNMainViewController.h"
+#import "YUNAlbumViewController.h"
 #import "YUNPhotoCell.h"
 #import "MainViewController.h"
+#import "YUNAlbumViewModel.h"
+#import "YUNAlbumPhotoModel.h"
 
-@interface YUNMainViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface YUNAlbumViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property(nonatomic, strong) UITableView *tableView;
+@property(nonatomic, strong) UIImageView *avatarImageView;
+@property(nonatomic, strong) YUNAlbumViewModel *viewModel;
 
 @end
 
-@implementation YUNMainViewController
+@implementation YUNAlbumViewController
 
 #pragma mark - LifeCycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self.view addSubview:self.tableView];
+    [self.view addSubview:self.avatarImageView];
+    
+    [self getAlbum];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    self.navigationController.navigationBarHidden = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,16 +63,40 @@
     return _tableView;
 }
 
+- (UIImageView *)avatarImageView {
+    if (!_avatarImageView) {
+        //导航栏左上角圆形头像
+        NSString *imagePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:[NSString stringWithFormat:@"Image.bundle/%@", @"MineInfo/mineAvatar.jpg"]];
+        const CGFloat kAvatarSize = 40;
+        const CGFloat kAvatarLeadingSpace = 10;
+//        const CGFloat kAvatarTopSpace = 10;
+        CGRect frame= CGRectMake(kAvatarLeadingSpace, kQNSystemStatusBarHeight, kAvatarSize, kAvatarSize);
+        _avatarImageView = [[UIImageView alloc] initWithImage:[UIImage imageWithContentsOfFile:imagePath]];
+        [_avatarImageView setFrame:frame];
+        _avatarImageView.contentMode = UIViewContentModeScaleAspectFill;
+        _avatarImageView.layer.cornerRadius = kAvatarSize / 2;
+        _avatarImageView.layer.masksToBounds = YES;
+    }
+    return _avatarImageView;
+}
+
+- (YUNAlbumViewModel *)viewModel {
+    if (!_viewModel) {
+        _viewModel = [[YUNAlbumViewModel alloc] init];
+    }
+    return _viewModel;
+}
+
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    return [self.viewModel.listItems count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     YUNPhotoCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([YUNPhotoCell class]) forIndexPath:indexPath];
     
-//    CListItemType *item = [self.viewModel.listItems safeObjectAtIndex:indexPath.row];
-    [cell layoutWithData:@""];
+    YUNAlbumPhotoModel *item = [self.viewModel.listItems objectAtIndex:indexPath.row];
+    [cell layoutWithData:item];
     
     [cell setNeedsLayout];
     [cell layoutIfNeeded];
@@ -76,20 +113,15 @@
     
     MainViewController *mainVC = [[MainViewController alloc] init];
     [self.navigationController pushViewController:mainVC animated:YES];
-    
-//    CListItemType *item = [self.viewModel.listItems safeObjectAtIndex:indexPath.row];
-//    item.hasRead = YES;
-//
-//    QNControllerParam *param = [QNControllerParam build:^(QNControllerParamBuilder *builder) {
-//        builder.commonParam = [QNCommonParam build:^(QNCommonParamBuilder *builder) {
-//            builder.listItem = item;
-//        }];
-//    }];
-//    QNQualityCourseDetailController *detailVC = [[QNQualityCourseDetailController alloc] initWithParam:param];
-//    detailVC.from = kQNQualityCourseDetailFromPurchased;
-//    [self.qn_navigationController pushViewController:detailVC];
-//
-//    [[CBossFeedback sharedFeedback] reportContentPurchasedNewsClickWithCourseId:item.idStr];
+}
+
+#pragma mark - Private Method
+- (void)getAlbum {
+    [self.viewModel loadListItemsWithSuccess:^{
+        [self.tableView reloadData];
+    } fail:^{
+        ;
+    }];
 }
 
 @end

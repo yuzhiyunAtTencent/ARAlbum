@@ -7,6 +7,7 @@
 //
 
 #import "YUNPhotoCell.h"
+#import "YUNAlbumViewModel.h"
 
 @interface YUNPhotoCell()
 
@@ -114,12 +115,13 @@
 
 
 #pragma mark - Public Methods
-- (void)layoutWithData:(NSString *)item {
+- (void)layoutWithData:(YUNAlbumPhotoModel *)item {
+    
     NSString *imagePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:[NSString stringWithFormat:@"Image.bundle/%@", @"PhotoCover/c.jpg"]];
     self.coverImageView.image = [UIImage imageWithContentsOfFile:imagePath];
-    self.titleLabel.text = @"宝宝的2岁生日靓照";
-    self.placeLabel.text = @"北京华诚影楼";
-    self.dateLabel.text = @"2017.02.03";
+    self.titleLabel.text = item.title;
+    self.placeLabel.text = item.place;
+    self.dateLabel.text = item.date;
 }
 
 @end

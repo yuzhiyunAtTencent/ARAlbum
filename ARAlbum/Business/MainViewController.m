@@ -44,6 +44,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
+    self.navigationController.navigationBarHidden = NO;
     // Create a session configuration 主要负责传感器追踪手机的移动和旋转
     ARWorldTrackingConfiguration *configuration = [ARWorldTrackingConfiguration new];
 

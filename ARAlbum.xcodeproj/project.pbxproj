@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		918317D940CD152EE28FA294 /* libPods-ARAlbum.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B56BF0010655870FFEE85FE /* libPods-ARAlbum.a */; };
 		CD448F3D2067E1E900892455 /* ARCubeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD448F3C2067E1E900892455 /* ARCubeViewController.m */; };
 		CD448F4A2068E12F00892455 /* YUNAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD448F492068E12F00892455 /* YUNAlbumViewController.m */; };
 		CD448F532068EC9800892455 /* YUNBasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD448F522068EC9800892455 /* YUNBasicViewController.m */; };
@@ -26,6 +27,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		36764EFB7A7A9A24C05E504B /* Pods-ARAlbum.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARAlbum.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ARAlbum/Pods-ARAlbum.debug.xcconfig"; sourceTree = "<group>"; };
+		6B56BF0010655870FFEE85FE /* libPods-ARAlbum.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ARAlbum.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		83024F0A66EFB31E0EC723F4 /* Pods-ARAlbum.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARAlbum.release.xcconfig"; path = "Pods/Target Support Files/Pods-ARAlbum/Pods-ARAlbum.release.xcconfig"; sourceTree = "<group>"; };
 		CD448F3B2067E1E900892455 /* ARCubeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ARCubeViewController.h; sourceTree = "<group>"; };
 		CD448F3C2067E1E900892455 /* ARCubeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ARCubeViewController.m; sourceTree = "<group>"; };
 		CD448F482068E12F00892455 /* YUNAlbumViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUNAlbumViewController.h; sourceTree = "<group>"; };
@@ -65,12 +69,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				918317D940CD152EE28FA294 /* libPods-ARAlbum.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		57247C8038EB5FD5BCCB0253 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6B56BF0010655870FFEE85FE /* libPods-ARAlbum.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		97A5E20ADE8412925A7CD295 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				36764EFB7A7A9A24C05E504B /* Pods-ARAlbum.debug.xcconfig */,
+				83024F0A66EFB31E0EC723F4 /* Pods-ARAlbum.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		CD448F3A2067E1AB00892455 /* Cube */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +200,8 @@
 				CD448F4B2068EB1800892455 /* YUNPrefixHeader.pch */,
 				CDC509ED205F5C3600A415C7 /* ARAlbum */,
 				CDC509EC205F5C3600A415C7 /* Products */,
+				97A5E20ADE8412925A7CD295 /* Pods */,
+				57247C8038EB5FD5BCCB0253 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -212,6 +236,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CDC50A03205F5C3600A415C7 /* Build configuration list for PBXNativeTarget "ARAlbum" */;
 			buildPhases = (
+				ECCAB4AD24D79E6059E75507 /* [CP] Check Pods Manifest.lock */,
 				CDC509E7205F5C3600A415C7 /* Sources */,
 				CDC509E8205F5C3600A415C7 /* Frameworks */,
 				CDC509E9205F5C3600A415C7 /* Resources */,
@@ -272,6 +297,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		ECCAB4AD24D79E6059E75507 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ARAlbum-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CDC509E7205F5C3600A415C7 /* Sources */ = {
@@ -412,6 +458,7 @@
 		};
 		CDC50A04205F5C3600A415C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36764EFB7A7A9A24C05E504B /* Pods-ARAlbum.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -428,6 +475,7 @@
 		};
 		CDC50A05205F5C3600A415C7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 83024F0A66EFB31E0EC723F4 /* Pods-ARAlbum.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

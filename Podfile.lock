@@ -1,0 +1,36 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - "SDWebImage+ExtensionSupport (3.7.1.2)":
+    - "SDWebImage+ExtensionSupport/Core (= 3.7.1.2)"
+  - "SDWebImage+ExtensionSupport/Core (3.7.1.2)"
+
+DEPENDENCIES:
+  - AFNetworking (= 3.1.0)
+  - "SDWebImage+ExtensionSupport (~> 3.7.1.2)"
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - AFNetworking
+    - "SDWebImage+ExtensionSupport"
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  "SDWebImage+ExtensionSupport": 72b57456f83ccd7996b258912c749a8275309b74
+
+PODFILE CHECKSUM: 344533efc7cac44c9ca30d8cfb4bf0474700c291
+
+COCOAPODS: 1.5.0

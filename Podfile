@@ -1,6 +1,6 @@
 platform:ios, '7.0'
 
 target 'ARAlbum' do
-pod 'SDWebImage', '~> 4.3.3'
+pod 'SDWebImage+ExtensionSupport', '~> 3.7.1.2'
 pod'AFNetworking', '3.1.0'
 end

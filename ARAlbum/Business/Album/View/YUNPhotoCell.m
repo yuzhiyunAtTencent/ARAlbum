@@ -117,8 +117,9 @@
 #pragma mark - Public Methods
 - (void)layoutWithData:(YUNAlbumPhotoModel *)item {
     
-    NSString *imagePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:[NSString stringWithFormat:@"Image.bundle/%@", @"PhotoCover/c.jpg"]];
-    self.coverImageView.image = [UIImage imageWithContentsOfFile:imagePath];
+//    NSString *imagePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:[NSString stringWithFormat:@"Image.bundle/%@", @"PhotoCover/c.jpg"]];
+//    self.coverImageView.image = [UIImage imageWithContentsOfFile:imagePath];
+    
     self.titleLabel.text = item.title;
     self.placeLabel.text = item.place;
     self.dateLabel.text = item.date;

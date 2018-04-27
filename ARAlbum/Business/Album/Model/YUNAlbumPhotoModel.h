@@ -13,5 +13,6 @@
 @property(nonatomic, strong) NSString *title;
 @property(nonatomic, strong) NSString *place;
 @property(nonatomic, strong) NSString *date;
+@property(nonatomic, strong) NSString *coverImgUrl;
 
 @end

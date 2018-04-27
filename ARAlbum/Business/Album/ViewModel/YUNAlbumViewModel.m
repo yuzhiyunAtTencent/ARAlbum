@@ -41,6 +41,7 @@
         model.title = item[@"title"];
         model.place = item[@"place"];
         model.date = item[@"date"];
+        model.coverImgUrl = item[@"coverImgUrl"];
         
         [self.listItems addObject:model];
     }

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ARAlbum/Business/Album/ViewModel/YUNAlbumViewModel.m"
-            timestampString = "546332299.955014"
+            timestampString = "546519294.0322731"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "-loadListItemsWithSuccess:fail:"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ARAlbum/Business/Album/ViewModel/YUNAlbumViewModel.m"
-            timestampString = "546332299.9577889"
+            timestampString = "546519294.035356"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "32"

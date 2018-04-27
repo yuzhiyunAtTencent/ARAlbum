@@ -8,6 +8,7 @@
 
 #import "YUNPhotoCell.h"
 #import "YUNAlbumViewModel.h"
+#import <SDWebImage+ExtensionSupport/UIImageView+WebCache.h>
 
 @interface YUNPhotoCell()
 
@@ -119,7 +120,7 @@
     
 //    NSString *imagePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:[NSString stringWithFormat:@"Image.bundle/%@", @"PhotoCover/c.jpg"]];
 //    self.coverImageView.image = [UIImage imageWithContentsOfFile:imagePath];
-    
+    [self.coverImageView sd_setImageWithURL:[NSURL URLWithString:item.coverImgUrl]];
     self.titleLabel.text = item.title;
     self.placeLabel.text = item.place;
     self.dateLabel.text = item.date;

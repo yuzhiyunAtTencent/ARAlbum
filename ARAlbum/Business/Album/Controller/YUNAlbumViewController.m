@@ -120,7 +120,10 @@
     [self.viewModel loadListItemsWithSuccess:^{
         [self.tableView reloadData];
     } fail:^{
-        ;
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"获取数据失败，请检查网络" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+        [alertController addAction:okAction];
+        [self presentViewController:alertController animated:YES completion:nil];
     }];
 }
 

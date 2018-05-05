@@ -18,6 +18,9 @@
 		CD448F782088859000892455 /* YUNAlbumViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD448F772088858F00892455 /* YUNAlbumViewModel.m */; };
 		CD448F7C208889EB00892455 /* YUNAlbumPhotoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD448F7B208889EB00892455 /* YUNAlbumPhotoModel.m */; };
 		CD448F7E208F1AAA00892455 /* File.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CD448F7D208F1AA900892455 /* File.bundle */; };
+		CD5707B8209DCB04005DDCDB /* YUNLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5707B7209DCB04005DDCDB /* YUNLoginViewController.m */; };
+		CD5707C2209DD17A005DDCDB /* YUNUserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5707C1209DD17A005DDCDB /* YUNUserInfoModel.m */; };
+		CD5707C5209DD1AB005DDCDB /* YUNLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5707C4209DD1AB005DDCDB /* YUNLoginView.m */; };
 		CDC509F0205F5C3600A415C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC509EF205F5C3600A415C7 /* AppDelegate.m */; };
 		CDC509F2205F5C3600A415C7 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = CDC509F1205F5C3600A415C7 /* art.scnassets */; };
 		CDC509F5205F5C3600A415C7 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC509F4205F5C3600A415C7 /* MainViewController.m */; };
@@ -52,6 +55,12 @@
 		CD448F7A208889EB00892455 /* YUNAlbumPhotoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUNAlbumPhotoModel.h; sourceTree = "<group>"; };
 		CD448F7B208889EB00892455 /* YUNAlbumPhotoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUNAlbumPhotoModel.m; sourceTree = "<group>"; };
 		CD448F7D208F1AA900892455 /* File.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = File.bundle; sourceTree = "<group>"; };
+		CD5707B6209DCB04005DDCDB /* YUNLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUNLoginViewController.h; sourceTree = "<group>"; };
+		CD5707B7209DCB04005DDCDB /* YUNLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUNLoginViewController.m; sourceTree = "<group>"; };
+		CD5707C0209DD17A005DDCDB /* YUNUserInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUNUserInfoModel.h; sourceTree = "<group>"; };
+		CD5707C1209DD17A005DDCDB /* YUNUserInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUNUserInfoModel.m; sourceTree = "<group>"; };
+		CD5707C3209DD1AB005DDCDB /* YUNLoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUNLoginView.h; sourceTree = "<group>"; };
+		CD5707C4209DD1AB005DDCDB /* YUNLoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUNLoginView.m; sourceTree = "<group>"; };
 		CDC509EB205F5C3600A415C7 /* ARAlbum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARAlbum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDC509EE205F5C3600A415C7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CDC509EF205F5C3600A415C7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -175,8 +184,8 @@
 		CD448F672068F34A00892455 /* Business */ = {
 			isa = PBXGroup;
 			children = (
-				CDC509F3205F5C3600A415C7 /* MainViewController.h */,
-				CDC509F4205F5C3600A415C7 /* MainViewController.m */,
+				CD5707B5209DCAA8005DDCDB /* DetailArPhoto */,
+				CD5707B4209DCA7F005DDCDB /* Login */,
 				CD448F3E2068DA1000892455 /* Album */,
 				CD448F3A2067E1AB00892455 /* Cube */,
 			);
@@ -188,6 +197,60 @@
 			children = (
 				CD448F7A208889EB00892455 /* YUNAlbumPhotoModel.h */,
 				CD448F7B208889EB00892455 /* YUNAlbumPhotoModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CD5707B4209DCA7F005DDCDB /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				CD5707BC209DD03C005DDCDB /* Model */,
+				CD5707BB209DD00B005DDCDB /* ViewModel */,
+				CD5707BA209DD004005DDCDB /* Controller */,
+				CD5707B9209DCFFB005DDCDB /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		CD5707B5209DCAA8005DDCDB /* DetailArPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				CDC509F3205F5C3600A415C7 /* MainViewController.h */,
+				CDC509F4205F5C3600A415C7 /* MainViewController.m */,
+			);
+			path = DetailArPhoto;
+			sourceTree = "<group>";
+		};
+		CD5707B9209DCFFB005DDCDB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CD5707C3209DD1AB005DDCDB /* YUNLoginView.h */,
+				CD5707C4209DD1AB005DDCDB /* YUNLoginView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CD5707BA209DD004005DDCDB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CD5707B6209DCB04005DDCDB /* YUNLoginViewController.h */,
+				CD5707B7209DCB04005DDCDB /* YUNLoginViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CD5707BB209DD00B005DDCDB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CD5707BC209DD03C005DDCDB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CD5707C0209DD17A005DDCDB /* YUNUserInfoModel.h */,
+				CD5707C1209DD17A005DDCDB /* YUNUserInfoModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -325,16 +388,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDC509F5205F5C3600A415C7 /* MainViewController.m in Sources */,
+				CD5707C2209DD17A005DDCDB /* YUNUserInfoModel.m in Sources */,
 				CD448F4A2068E12F00892455 /* YUNAlbumViewController.m in Sources */,
 				CDC50A00205F5C3600A415C7 /* main.m in Sources */,
 				CD448F782088859000892455 /* YUNAlbumViewModel.m in Sources */,
 				CD448F7C208889EB00892455 /* YUNAlbumPhotoModel.m in Sources */,
 				CD448F602068EF4100892455 /* UIScreen+YunUtils.m in Sources */,
+				CD5707C5209DD1AB005DDCDB /* YUNLoginView.m in Sources */,
 				CD448F3D2067E1E900892455 /* ARCubeViewController.m in Sources */,
 				CD448F72206A6DBA00892455 /* UIView+YUNUtil.m in Sources */,
 				CD448F532068EC9800892455 /* YUNBasicViewController.m in Sources */,
 				CDC509F0205F5C3600A415C7 /* AppDelegate.m in Sources */,
 				CD448F6A2068F48E00892455 /* YUNPhotoCell.m in Sources */,
+				CD5707B8209DCB04005DDCDB /* YUNLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

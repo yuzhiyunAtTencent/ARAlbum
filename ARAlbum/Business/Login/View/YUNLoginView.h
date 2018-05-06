@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol YUNLoginViewActionDelegate <NSObject>
+
+@required
+- (void)loginBtnDidTaped;
+
+@end
+
 @interface YUNLoginView : UIView
+
+@property(nonatomic, weak) id<YUNLoginViewActionDelegate> actionDelegate;
 
 @end

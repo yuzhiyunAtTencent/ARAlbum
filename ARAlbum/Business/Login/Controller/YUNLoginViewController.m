@@ -8,8 +8,9 @@
 
 #import "YUNLoginViewController.h"
 #import "YUNLoginView.h"
+#import "YUNAlbumViewController.h"
 
-@interface YUNLoginViewController ()
+@interface YUNLoginViewController () <YUNLoginViewActionDelegate>
 
 @property(nonatomic, strong) YUNLoginView *loginView;
 
@@ -38,9 +39,16 @@
     if (!_loginView) {
         CGRect frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
         _loginView = [[YUNLoginView alloc] initWithFrame:frame];
+        
+        _loginView.actionDelegate = self;
     }
     return _loginView;
 }
 
+#pragma mark - YUNLoginViewActionDelegate
+- (void)loginBtnDidTaped {
+    YUNAlbumViewController *controller = [[YUNAlbumViewController alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
+}
 
 @end

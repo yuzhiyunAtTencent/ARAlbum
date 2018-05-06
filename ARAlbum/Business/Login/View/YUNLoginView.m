@@ -28,6 +28,8 @@
         [self addSubview:self.usrNameTextView];
         [self addSubview:self.pwdTextView];
         [self addSubview:self.loginBtn];
+        
+//        [self p_addTapGesture];
     }
     return self;
 }
@@ -86,8 +88,19 @@
         _loginBtn.backgroundColor = [UIColor greenColor];
         [_loginBtn setTitle:@"登录" forState:UIControlStateNormal];
         _loginBtn.titleLabel.textColor = [UIColor whiteColor];
+        
+        [_loginBtn addTarget:self action:@selector(p_loginViewDidTapped:) forControlEvents:UIControlEventTouchUpInside];
     }
+    
     return _loginBtn;
+}
+
+#pragma mark - private
+//登录
+- (void)p_loginViewDidTapped:(id)sender{
+    if (CHECK_VALID_DELEGATE(self.actionDelegate, @selector(loginBtnDidTaped))) {
+        [self.actionDelegate loginBtnDidTaped];
+    }
 }
 
 @end

@@ -29,7 +29,7 @@
     [self.view addSubview:self.tableView];
     [self.view addSubview:self.avatarImageView];
     
-    [self getAlbum];
+    [self p_getAlbum];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -76,6 +76,11 @@
         _avatarImageView.contentMode = UIViewContentModeScaleAspectFill;
         _avatarImageView.layer.cornerRadius = kAvatarSize / 2;
         _avatarImageView.layer.masksToBounds = YES;
+        
+        //添加点击事件
+        UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(p_avatarDidTapped:)];
+        _avatarImageView.userInteractionEnabled = YES;
+        [_avatarImageView addGestureRecognizer:recognizer];
     }
     return _avatarImageView;
 }
@@ -116,7 +121,7 @@
 }
 
 #pragma mark - Private Method
-- (void)getAlbum {
+- (void)p_getAlbum {
     [self.viewModel loadListItemsWithSuccess:^{
         [self.tableView reloadData];
     } fail:^{
@@ -125,6 +130,20 @@
         [alertController addAction:okAction];
         [self presentViewController:alertController animated:YES completion:nil];
     }];
+}
+
+//导航栏头像点击事件
+-(void)p_avatarDidTapped:(UIGestureRecognizer *) gestureRecognizer{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"退出登录" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil];
+    
+    [alertController addAction:okAction];
+    [alertController addAction:cancelAction];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 @end

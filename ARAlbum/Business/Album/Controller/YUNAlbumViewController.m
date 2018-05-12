@@ -66,7 +66,7 @@
 - (UIImageView *)avatarImageView {
     if (!_avatarImageView) {
         //导航栏左上角圆形头像
-        NSString *imagePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:[NSString stringWithFormat:@"Image.bundle/%@", @"MineInfo/mineAvatar.jpg"]];
+        NSString *imagePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:[NSString stringWithFormat:@"Image.bundle/%@", @"MineInfo/baobao.jpg"]];
         const CGFloat kAvatarSize = 40;
         const CGFloat kAvatarLeadingSpace = 10;
 //        const CGFloat kAvatarTopSpace = 10;
@@ -124,8 +124,8 @@
 - (void)p_getAlbum {
     [self.viewModel loadListItemsWithSuccess:^{
         [self.tableView reloadData];
-    } fail:^{
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"获取数据失败，请检查网络" preferredStyle:UIAlertControllerStyleAlert];
+    } fail:^(NSString *error) {
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"温馨提示" message:error preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
         [alertController addAction:okAction];
         [self presentViewController:alertController animated:YES completion:nil];

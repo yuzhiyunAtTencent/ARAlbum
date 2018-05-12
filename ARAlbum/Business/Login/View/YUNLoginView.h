@@ -17,6 +17,9 @@
 
 @interface YUNLoginView : UIView
 
+@property(nonatomic, strong, readonly) UITextView *usrNameTextView;
+@property(nonatomic, strong, readonly) UITextView *pwdTextView;
+
 @property(nonatomic, weak) id<YUNLoginViewActionDelegate> actionDelegate;
 
 @end

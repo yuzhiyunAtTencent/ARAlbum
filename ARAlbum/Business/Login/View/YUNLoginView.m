@@ -58,7 +58,7 @@
 - (UIImageView *)avatarImageView {
     if (!_avatarImageView) {
         //导航栏左上角圆形头像
-        NSString *imagePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:[NSString stringWithFormat:@"Image.bundle/%@", @"MineInfo/mineAvatar.jpg"]];
+        NSString *imagePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:[NSString stringWithFormat:@"Image.bundle/%@", @"MineInfo/baobao.jpg"]];
         _avatarImageView = [[UIImageView alloc] initWithImage:[UIImage imageWithContentsOfFile:imagePath]];
         _avatarImageView.contentMode = UIViewContentModeScaleAspectFill;
         _avatarImageView.layer.masksToBounds = YES;
@@ -69,7 +69,7 @@
 - (UITextView *)usrNameTextView {
     if (!_usrNameTextView) {
         _usrNameTextView = [[UITextView alloc] init];
-        _usrNameTextView.text = @"15111356294";
+        _usrNameTextView.text = @"15111356293";
     }
     return _usrNameTextView;
 }
@@ -77,7 +77,7 @@
 - (UITextView *)pwdTextView {
     if (!_pwdTextView) {
         _pwdTextView = [[UITextView alloc] init];
-        _pwdTextView.text = @"密码";
+        _pwdTextView.text = @"123456";
     }
     return _pwdTextView;
 }

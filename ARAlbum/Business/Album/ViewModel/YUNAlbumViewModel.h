@@ -10,13 +10,13 @@
 #import "YUNAlbumPhotoModel.h"
 
 typedef void (^YUNAlbumLoadSuccessBlock)(void);
-typedef void (^YUNAlbumLoadFailBlock)(void);
+typedef void (^YUNAlbumLoadFailBlock)(NSString *error);
 
 @interface YUNAlbumViewModel : NSObject
 
 @property(nonatomic, strong, readonly) NSMutableArray<YUNAlbumPhotoModel *> *listItems;
 
 - (void)loadListItemsWithSuccess:(YUNAlbumLoadSuccessBlock)successBlock
-                            fail:(YUNAlbumLoadFailBlock)failBlcok;
+                            fail:(YUNAlbumLoadFailBlock)failBlock;
 
 @end

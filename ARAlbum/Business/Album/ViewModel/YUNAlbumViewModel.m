@@ -26,33 +26,38 @@
 }
 
 - (void)loadListItemsWithSuccess:(YUNAlbumLoadSuccessBlock)successBlock
-                            fail:(YUNAlbumLoadFailBlock)failBlcok {
+                            fail:(YUNAlbumLoadFailBlock)failBlock {
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
     
-    NSURL *URL = [NSURL URLWithString:@"http://140.143.19.42:8080/arPhotoList"];
+    NSURL *URL = [NSURL URLWithString:@"http://140.143.19.42:8080/arPhotoList?userId=0"];
     NSURLRequest *request = [NSURLRequest requestWithURL:URL];
     
     NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
         if (error) {
             NSLog(@"Error: %@", error);
             
-            failBlcok();
+            failBlock(@"网络错误或服务器发生未知错误");
         } else {
             NSLog(@"%@", response);
             NSLog(@"%@", responseObject);
-            NSArray *resultList = (NSArray*)responseObject;
-            for (NSDictionary *item in resultList) {
-                YUNAlbumPhotoModel *model = [[YUNAlbumPhotoModel alloc] init];
-                model.title = item[@"title"];
-                model.place = item[@"place"];
-                model.date = item[@"date"];
-                model.coverImgUrl = item[@"coverImgUrl"];
+            NSDictionary *responseDic = (NSDictionary*)responseObject;
+            if ([responseDic[@"code"] isEqualToString:@"0"]) {
+                NSArray *resultList = [responseDic objectForKey:@"data"];
+                for (NSDictionary *item in resultList) {
+                    YUNAlbumPhotoModel *model = [[YUNAlbumPhotoModel alloc] init];
+                    model.title = item[@"title"];
+                    model.place = item[@"place"];
+                    model.date = item[@"date"];
+                    model.coverImgUrl = item[@"coverImgUrl"];
+                    
+                    [self.listItems addObject:model];
+                }
                 
-                [self.listItems addObject:model];
+                successBlock();
+            } else {
+                failBlock(responseDic[@"msg"]);
             }
-            
-            successBlock();
         }
     }];
     [dataTask resume];

@@ -10,4 +10,6 @@
 
 @interface YUNAlbumViewController : YUNBasicViewController
 
+@property(nonatomic, strong) NSString *userId;
+
 @end

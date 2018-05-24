@@ -8,6 +8,7 @@
 
 #import "YUNLoginViewModel.h"
 #import <AFNetworking.h>
+#import "YUNEncryptUtil.h"
 
 @implementation YUNLoginViewModel
 
@@ -18,7 +19,8 @@
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
     
-    NSString *urlString = [NSString stringWithFormat:@"http://140.143.19.42:8080/login?userName=%@&pwd=%@",userName,pwd];
+    NSLog(@"%@",[YUNEncryptUtil md5String:pwd]);
+    NSString *urlString = [NSString stringWithFormat:@"http://140.143.19.42:8080/login?userName=%@&pwd=%@",userName,[YUNEncryptUtil md5String:pwd]];
     NSURL *URL = [NSURL URLWithString:urlString];
     NSURLRequest *request = [NSURLRequest requestWithURL:URL];
     

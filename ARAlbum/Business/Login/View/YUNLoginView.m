@@ -91,7 +91,6 @@
         
         [_loginBtn addTarget:self action:@selector(p_loginViewDidTapped:) forControlEvents:UIControlEventTouchUpInside];
     }
-    
     return _loginBtn;
 }
 

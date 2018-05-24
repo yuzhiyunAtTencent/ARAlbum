@@ -28,6 +28,7 @@
 		CDC509FA205F5C3600A415C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDC509F9205F5C3600A415C7 /* Assets.xcassets */; };
 		CDC509FD205F5C3600A415C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDC509FB205F5C3600A415C7 /* LaunchScreen.storyboard */; };
 		CDC50A00205F5C3600A415C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC509FF205F5C3600A415C7 /* main.m */; };
+		CDFF44C520B551C200E0284F /* YUNEncryptUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = CDFF44C420B551C200E0284F /* YUNEncryptUtil.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,8 @@
 		CDC509FC205F5C3600A415C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CDC509FE205F5C3600A415C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CDC509FF205F5C3600A415C7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CDFF44C320B551C200E0284F /* YUNEncryptUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUNEncryptUtil.h; sourceTree = "<group>"; };
+		CDFF44C420B551C200E0284F /* YUNEncryptUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUNEncryptUtil.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +167,7 @@
 		CD448F592068EF4100892455 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				CDFF44C220B5516A00E0284F /* Utils */,
 				CD448F502068EC7A00892455 /* Basic */,
 				CD448F5A2068EF4100892455 /* CommonMacros.h */,
 				CD448F5B2068EF4100892455 /* UIKit+Category */,
@@ -297,6 +301,15 @@
 			path = ARAlbum;
 			sourceTree = "<group>";
 		};
+		CDFF44C220B5516A00E0284F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CDFF44C320B551C200E0284F /* YUNEncryptUtil.h */,
+				CDFF44C420B551C200E0284F /* YUNEncryptUtil.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -402,6 +415,7 @@
 				CD448F602068EF4100892455 /* UIScreen+YunUtils.m in Sources */,
 				CD5707C5209DD1AB005DDCDB /* YUNLoginView.m in Sources */,
 				CD448F3D2067E1E900892455 /* ARCubeViewController.m in Sources */,
+				CDFF44C520B551C200E0284F /* YUNEncryptUtil.m in Sources */,
 				CD448F72206A6DBA00892455 /* UIView+YUNUtil.m in Sources */,
 				CD448F532068EC9800892455 /* YUNBasicViewController.m in Sources */,
 				CDC509F0205F5C3600A415C7 /* AppDelegate.m in Sources */,
